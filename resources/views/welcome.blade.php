@@ -1,104 +1,79 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE HTML>
+<html lang="id">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Created by Moch Diki Widianto, Powered By Bootstrap and Laravel">
+    <meta name="author" content="Moch Diki Widianto">
+    <title>DakiDaki</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('dist/css/bootstrap.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('dist/vendor/font-awesome/css/all.min.css') }}" rel="stylesheet">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media(min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
             }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('dist/css/custom/cover.css') }}" rel="stylesheet">
+</head>
 
-            .full-height {
-                height: 100vh;
-            }
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">DakiDaki</h3>
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link" href="{{ url('/') }}"><i class="fa fa-home" style="font-size:24px"></i></a>
+                </nav>
+            </div>
+        </header>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .links2 > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 20px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading"><span style="font-family: 'Tokoku';">DakiDaki</span> adalah ...</h1>
+            <p class="lead">Aplikasi penunjang pelaksanaan bisnis e-commerce dalam bidang mendaki gunung, terdapat fitur-fitur seperti persediaan dan harga didalamnya. Dikembangkan dengan framework <strong style="color:#f46242">Laravel</strong> dan
+                dukungan dari <strong style="color:#6fade8">Bootstrap 4</strong></p>
+            <br />
             @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+            <p class="lead">
+                <a href="{{ route('products.index') }}" class="btn btn-lg btn-primary"><span class="fa fa-sign-in-alt"></span> Lanjutkan</a>
+            </p>
+            @else
+            <p class="lead">
+                <a href="{{ url('/login') }}" class="btn btn-lg btn-success"><span class="fa fa-sign-in-alt"></span> Masuk</a>
+            </p>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}">Register</a>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    E-COMMERCE 
-                </div>
 
-                <div class="" >
-                  <a href="{{ route('products.index')}}" class="btn btn-lg btn-primary">All Products</a>
 
-                </div>
-            </div>
+    </div>
+    @endif
+
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Diberdayakan <a href="https://laravel.com/">Laravel</a> dan <a href="">Bootstrap</a> <a href=""></a>.</p>
         </div>
-    </body>
+    </footer>
+    </div>
+</body>
+
 </html>

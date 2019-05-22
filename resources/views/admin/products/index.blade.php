@@ -90,7 +90,7 @@
                             '</a>'+
                         '</h5>'+
                         '<p class="card-text">'+
-                        product.price+
+                        'Rp. '+product.price+'.00'+
                         '</p>'+
                         '<a href="/carts/add'+product.id+'" class="btn btn-primary">Beli</a>'+
                     '</div>'+

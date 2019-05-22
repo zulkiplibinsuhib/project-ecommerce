@@ -28,8 +28,8 @@ public function productReviews()
     }
 
 public function orderProducts($order_by) {      
-        $id = auth::user()->id;
-        $query = "SELECT * FROM products where products.user_id ='$id' ORDER BY created_at DESC";
+        $id = Auth::user()->id;
+        $query = "SELECT * FROM products where products.user_id =$id ORDER BY created_at DESC";
 
 
         if ($order_by == 'best_seller'){
@@ -43,21 +43,21 @@ public function orderProducts($order_by) {
                     
 
         } else if ($order_by == 'terbaik'){
-            
-            $query = "SELECT * FROM products where products.user_id ='$id' ORDER BY created_at DESC";
-            
+            $id = Auth::user()->id;
+            $query = "SELECT * FROM products where products.user_id =$id ORDER BY created_at DESC";
+           
 
         }else if ($order_by == 'termurah') {
-            
+            $id = auth::user()->id;
             $query = "SELECT * FROM products where products.user_id ='$id' ORDER BY price ASC";
 
         } else if ($order_by == 'termahal') {
-            
+            $id = auth::user()->id;
             $query = "SELECT * FROM products where products.user_id ='$id' ORDER BY price DESC";
 
         }else if ($order_by == 'terbaru') {
             
-            
+            $id = auth::user()->id;
             $query = "SELECT * FROM products where products.user_id ='$id' ORDER BY created_at DESC";
           
         }
